@@ -1,9 +1,4 @@
-██████████████████████████████████████████████████████████████████████
-📄 FILE 3 — backend/package.json
-██████████████████████████████████████████████████████████████████████
-📝 Dependency list for the backend. Save inside the same 'backend' folder as 'package.json'.
-──────────────────────────────────────────────────────────────────────
-json{
+{
   "name": "fame-wall-backend",
   "version": "1.0.0",
   "description": "Backend email + auth server for The Fame Wall",
@@ -24,6 +19,3 @@ json{
     "better-sqlite3": "^11.3.0"
   }
 }
-
-──────────────────────────────────────────────────────────────────────
-END OF FILE: FILE 3 — backend/package.json
