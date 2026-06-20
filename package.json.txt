@@ -1,0 +1,29 @@
+██████████████████████████████████████████████████████████████████████
+📄 FILE 3 — backend/package.json
+██████████████████████████████████████████████████████████████████████
+📝 Dependency list for the backend. Save inside the same 'backend' folder as 'package.json'.
+──────────────────────────────────────────────────────────────────────
+json{
+  "name": "fame-wall-backend",
+  "version": "1.0.0",
+  "description": "Backend email + auth server for The Fame Wall",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "resend": "^4.0.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "express-rate-limit": "^7.4.0",
+    "better-sqlite3": "^11.3.0"
+  }
+}
+
+──────────────────────────────────────────────────────────────────────
+END OF FILE: FILE 3 — backend/package.json
