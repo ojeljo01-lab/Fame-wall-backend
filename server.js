@@ -1,8 +1,4 @@
-📄 FILE 2 — backend/server.js
-██████████████████████████████████████████████████████████████████████
-📝 The backend server. Save this inside a 'backend' folder as 'server.js'.
-──────────────────────────────────────────────────────────────────────
-javascript/* ════════════════════════════════════════════════════════
+/* ════════════════════════════════════════════════════════
    THE FAME WALL — Backend (Express + SQLite + Resend email)
    Handles: register, real email verification code, sign in,
    resend code, session check.
@@ -153,7 +149,6 @@ app.post('/api/register', async (req, res) => {
       await sendVerificationEmail(normEmail, name.trim(), code);
     } catch (emailErr) {
       console.error('Resend error:', emailErr);
-      // Account exists in DB but email failed — let the client know so they can request a resend
       return res.status(201).json({
         ok: true,
         emailSent: false,
@@ -231,7 +226,6 @@ app.post('/api/login', async (req, res) => {
     if (!ok) return res.status(401).json({ error: 'Incorrect email or password.' });
 
     if (!user.verified) {
-      // Auto-send a fresh code so the client can jump straight to verification
       const code = genCode();
       const codeExpires = Date.now() + CODE_EXPIRY_MS;
       db.prepare('UPDATE users SET verify_code = ?, code_expires = ? WHERE id = ?').run(code, codeExpires, user.id);
@@ -262,6 +256,3 @@ app.listen(PORT, () => {
   console.log(`✦ The Fame Wall backend running on http://localhost:${PORT}`);
   console.log(`  Email sending via Resend ${process.env.RESEND_API_KEY?.includes('xxxx') ? '(⚠ NOT CONFIGURED YET)' : '(configured)'}`);
 });
-
-──────────────────────────────────────────────────────────────────────
-END OF FILE: FILE 2 — backend/server.js
